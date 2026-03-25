@@ -3,6 +3,7 @@ import dashboard
 import about
 import data_processing
 import visualization
+import risk_classification   # ✅ added
 
 
 # MUST BE FIRST STREAMLIT COMMAND
@@ -52,7 +53,7 @@ def navigation_menu():
             "Data Acquisition",
             "Data Processing",
             "Visualization",
-            "Advanced Analytics",
+            "Risk Classification and Reporting",   # ✅ updated
             "About"
         ]
     )
@@ -74,14 +75,13 @@ else:
         dashboard.show_dashboard()
 
     elif st.session_state.page == "Data Processing":
-        data_processing.show_milestone2()  # rename function later if you want
+        data_processing.show_milestone2()
 
     elif st.session_state.page == "Visualization":
         visualization.show_milestone3()
 
-    elif st.session_state.page == "Advanced Analytics":
-        st.title("🚀 Advanced Analytics")
-        st.info("This section is under development.")
+    elif st.session_state.page == "Risk Classification and Reporting":   # ✅ updated
+        risk_classification.show_milestone4()
 
     elif st.session_state.page == "About":
         about.show_about()
